@@ -5,9 +5,9 @@ import Header from '../components/Header'
 
 export default function Index() {
     return (
-        <div className="app bg-bg min-h-screen text-sm">
+        <div className="min-h-screen flex flex-col">
             <Header />
-            <div className="relative">
+            <div className="flex-1 mt-16">
                 <Outlet />
             </div>
             <Footer />

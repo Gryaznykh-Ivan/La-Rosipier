@@ -4,6 +4,13 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    fontSize: {
+      "xs": ['11px', { letterSpacing: "1px" }],
+      "sm": ['13px', { letterSpacing: "1px" }],
+      "base": ['14px', { letterSpacing: "1px" }],
+      "xl": ['16px', { letterSpacing: "1px" }],
+      "2xl": ['24px', { letterSpacing: "1px" }],
+    },
     screens: {
       'sm': '640px',
       'md': '768px',
