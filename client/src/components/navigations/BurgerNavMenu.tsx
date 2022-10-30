@@ -6,11 +6,24 @@ import ArrowLeft from '../icons/ArrowLeft';
 import ArrowRight from '../icons/ArrowRight';
 import { BurgerNavMenuData } from './NavMenuData'
 
-export default function BurgerNavMenu() {
+interface IProps {
+    onBurgerClose: () => void
+}
+
+export default function BurgerNavMenu({ onBurgerClose }: IProps) {
     const [menu, setMenu] = useState<IBurgerNavMenuState>({
         current: BurgerNavMenuData,
         history: []
     });
+
+    const onResetMenu = () => {
+        setMenu({
+            current: BurgerNavMenuData,
+            history: []
+        });
+
+        onBurgerClose();
+    }
 
     const onBackMenu = () => {
         const history = menu.history;
@@ -42,7 +55,7 @@ export default function BurgerNavMenu() {
                 }
 
                 return (
-                    <Link to={item.link} key={item.title} className="block text-sm font-semibold px-8 py-2 h-10 hover:text-gray-600 whitespace-nowrap">
+                    <Link to={item.link} key={item.title} className="block text-sm font-semibold px-8 py-2 h-10 hover:text-gray-600 whitespace-nowrap" onClick={( onResetMenu )}>
                         {item.title}
                     </Link>
                 )
