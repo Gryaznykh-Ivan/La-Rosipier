@@ -11,6 +11,7 @@ module.exports = {
       "base": ['14px', { letterSpacing: "1px" }],
       "xl": ['16px', { letterSpacing: "1px" }],
       "2xl": ['24px', { letterSpacing: "1px" }],
+      "3xl": ['32px', { letterSpacing: "1px" }],
     },
     screens: {
       'sm': '640px',

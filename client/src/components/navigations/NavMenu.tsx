@@ -16,7 +16,7 @@ export default function NavMenu() {
     return (
         <div className="hidden md:block bg-white" onMouseLeave={() => onShowSubMenu([], -1)}>
             <div className="border-b-[1px]">
-                <div className="container flex flex-wrap items-center px-3">
+                <div className="container flex items-center px-3">
                     {NavMenuData.map((item, i) => (
                         < Link key={item.title} to={item.link} className="relative group box-border text-xs mr-4 py-3 font-bold tracking-wide whitespace-nowrap" onMouseEnter={() => onShowSubMenu(item.menu, i)}>
                             {item.title}
