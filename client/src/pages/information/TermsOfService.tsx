@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function TermsOfService() {
     return (
-        <div className="my-8 max-w-3xl m-auto">
+        <div className="my-8 max-w-3xl m-auto px-3 md:px-0">
             <h1 className="text-3xl font-bold">Условия предоставления услуг интернет-магазина The Sortage</h1>
             <h2 className="text-2xl font-semibold mb-4 mt-2">Термины</h2>
             <p>Заказ — соответствующим образом оформленный и размещенный заказ клиента (заполнены соответствующие поля на сайте в разделе «оформление заказа»), адресованный продавцу, на продажу и доставку выбранного на сайте товара по указанному клиентом адресу.</p>

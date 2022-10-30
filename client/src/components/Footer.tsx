@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 
 export default function Footer() {
     return (
-        <div className="bg-gray-100 p-8">
+        <div className="p-8">
             <div className="container grid grid-cols-1 gap-10 md:grid-cols-4">
                 <div className="max-w-[200px] md:max-w-none">
                     <div className="uppercase font-bold text-xxs mb-5">ПОМОЩЬ</div>

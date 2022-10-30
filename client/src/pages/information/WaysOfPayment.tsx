@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function WaysOfPayment() {
     return (
-        <div className="my-8 max-w-3xl m-auto">
+        <div className="my-8 max-w-3xl m-auto px-3 md:px-0">
             <h1 className="text-3xl font-bold">Способы отплаты</h1>
             <h2 className="text-2xl font-semibold mb-4 mt-2">Оплата для Москвы и Московской области</h2>
             <ul className="list-disc ml-5">

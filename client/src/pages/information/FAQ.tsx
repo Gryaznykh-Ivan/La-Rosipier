@@ -1,9 +1,9 @@
 import React from 'react'
-import QuestionAccordion from '../../components/accordion/QuestionAccordion'
+import QuestionAccordion from '../../components/accordions/QuestionAccordion'
 
 export default function FAQ() {
     return (
-        <div className="my-8 max-w-3xl m-auto">
+        <div className="my-8 max-w-3xl m-auto px-3 md:px-0">
             <h2 className="text-2xl font-semibold my-4">Общие вопросы</h2>
             <div className="">
                 <QuestionAccordion

@@ -37,7 +37,7 @@ export default function BurgerNavMenu({ onBurgerClose }: IProps) {
     }
 
     return (
-        <div className="divide-y-[1px] divide-gray-200 transform transition-all duration-500">
+        <div className="mt-16 divide-y-[1px] divide-gray-200 transform transition-all duration-500">
             {menu.history.length > 0 &&
                 <div className="flex items-center text-sm font-semibold pl-2 py-2 h-10 cursor-pointer whitespace-nowrap" onClick={onBackMenu}>
                     <ArrowLeft w={16} h={16} />

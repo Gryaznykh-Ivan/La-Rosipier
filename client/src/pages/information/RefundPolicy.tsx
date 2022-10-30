@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function RefundPolicy() {
     return (
-        <div className="my-8 max-w-3xl m-auto">
+        <div className="my-8 max-w-3xl m-auto px-3 md:px-0">
             <h1 className="text-3xl font-bold">Обмен и возврат</h1>
             <h2 className="text-2xl font-semibold mb-4 mt-2">Обмен</h2>
             <p>Вы можете обменять товар, купленный в нашем магазине, при соблюдении следующих условий:</p>
