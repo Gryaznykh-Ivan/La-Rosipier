@@ -24,17 +24,17 @@ export default function Footer() {
                 <div className="max-w-[200px] md:max-w-none">
                     <div className="uppercase font-bold text-xxs mb-5">СЛУЖБА КЛИЕНТСКОЙ ПОДДЕРЖКИ</div>
                     <div className="text-base">
-                        <a href="mailto:support@thesortage.com" className="block leading-6">support@thesortage.com</a>
-                        <a href="tel:+7(995)788-00-58" className="block leading-6">+7(995)788-00-58</a>
-                        <div className="block leading-6 mt-3">Звонки принимаются ежедневно</div>
-                        <div className="block leading-6">с 10:00 до 22:00 по МСК.</div>
+                        <a href="mailto:support@thesortage.com" className="block leading-6 text-gray-600">support@thesortage.com</a>
+                        <a href="tel:+7(995)788-00-58" className="block leading-6 text-gray-600">+7(995)788-00-58</a>
+                        <div className="block leading-6 mt-3 text-gray-600">Звонки принимаются ежедневно</div>
+                        <div className="block leading-6 text-gray-600">с 10:00 до 22:00 по МСК.</div>
                     </div>
                 </div>
                 <div className="max-w-[250px] md:max-w-none">
                     <div className="uppercase font-bold text-xxs mb-5">АДРЕС МАГАЗИНА</div>
                     <div className="text-base">
-                        <div className="block leading-6">Москва, Кутузовский проспект 48 Галереи "Времена Года", 3 этаж.</div>
-                        <div className="block leading-6 mt-3">Время работы: ежедневно с 11:00 до 22:00.</div>
+                        <div className="block leading-6 text-gray-600">Москва, Кутузовский проспект 48 Галереи "Времена Года", 3 этаж.</div>
+                        <div className="block leading-6 mt-3 text-gray-600">Время работы: ежедневно с 11:00 до 22:00.</div>
                     </div>
                 </div>
             </div>
