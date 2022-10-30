@@ -5,7 +5,8 @@ module.exports = {
   ],
   theme: {
     fontSize: {
-      "xs": ['11px', { letterSpacing: "1px" }],
+      "xxs": ['11px', { letterSpacing: "1px" }],
+      "xs": ['12px', { letterSpacing: "1px" }],
       "sm": ['13px', { letterSpacing: "1px" }],
       "base": ['14px', { letterSpacing: "1px" }],
       "xl": ['16px', { letterSpacing: "1px" }],

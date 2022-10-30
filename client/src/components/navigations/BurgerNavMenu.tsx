@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom';
 import { IBurgerNavMenuState, NavMenuType } from '../../types'
 import ArrowLeft from '../icons/ArrowLeft';
 import ArrowRight from '../icons/ArrowRight';
-import { NavMenuData } from './NavMenuData'
+import { BurgerNavMenuData } from './NavMenuData'
 
 export default function BurgerNavMenu() {
     const [menu, setMenu] = useState<IBurgerNavMenuState>({
-        current: NavMenuData,
+        current: BurgerNavMenuData,
         history: []
     });
 
     const onBackMenu = () => {
         const history = menu.history;
-        const current = history.at(-1)?.menu || NavMenuData;
+        const current = history.at(-1)?.menu || BurgerNavMenuData;
         history.pop();
         setMenu(prev => ({ ...prev, history, current }))
     }
@@ -32,23 +32,20 @@ export default function BurgerNavMenu() {
                 </div>
             }
             {menu.current.map(item => {
-                switch (item.type) {
-                    case "MENU":
-                        return (
-                            <div key={item.title} className="flex items-center justify-between text-sm font-semibold pl-8 pr-2 py-2 h-10 cursor-pointer whitespace-nowrap" onClick={() => onSelectMenu(item.menu, item.title)}>
-                                {item.title}
-                                <ArrowRight w={16} h={16} />
-                            </div>
-                        )
-                    case "LINK":
-                        return (
-                            <Link to={item.link} key={item.title} className="block text-sm font-semibold px-8 py-2 h-10 whitespace-nowrap">
-                                {item.title}
-                            </Link>
-                        )
-                    default:
-                        return <></>
+                if (item.menu.length !== 0) {
+                    return (
+                        <div key={item.title} className="flex items-center justify-between text-sm font-semibold pl-8 pr-2 py-2 h-10 cursor-pointer hover:text-gray-600 whitespace-nowrap" onClick={() => onSelectMenu(item.menu, item.title)}>
+                            {item.title}
+                            <ArrowRight w={16} h={16} />
+                        </div>
+                    )
                 }
+
+                return (
+                    <Link to={item.link} key={item.title} className="block text-sm font-semibold px-8 py-2 h-10 hover:text-gray-600 whitespace-nowrap">
+                        {item.title}
+                    </Link>
+                )
             })}
         </div>
     )

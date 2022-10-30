@@ -1,13 +1,8 @@
-interface INavMenuOptionMenuType {
-    type: "MENU";
-    title: string;
-    menu: Array<INavMenuOptionMenuType | INavMenuOptionLinkType>
-}
-
-interface INavMenuOptionLinkType {
+interface INavMenuItemLinkType {
     type: "LINK";
     title: string;
     link: string;
+    menu: Array<INavMenuItemLinkType>;
 }
 
 interface INavMenuHistoryItem {
@@ -15,9 +10,14 @@ interface INavMenuHistoryItem {
     menu: NavMenuType;
 }
 
-export type NavMenuType = Array<INavMenuOptionMenuType | INavMenuOptionLinkType>
+export type NavMenuType = Array<INavMenuItemLinkType>
 
 export interface IBurgerNavMenuState {
     current: NavMenuType;
     history: Array<INavMenuHistoryItem>;
+}
+
+export interface INavMenuState {
+    current: NavMenuType;
+    activeIndex: number;
 }
