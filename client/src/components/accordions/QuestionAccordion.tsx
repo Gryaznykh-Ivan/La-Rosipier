@@ -17,8 +17,8 @@ export default function QuestionAccordion({ question, answer }: IProps) {
     return (
         <div className="w-full">
             <div className={`flex justify-between items-center py-3 cursor-pointer hover:bg-gray-100 rounded-lg px-4 ${isOpened && "bg-gray-100"}`} onClick={onToggle}>
-                <div className={`font-${isOpened ? "semibold" : "normal"}`}>{question}</div>
-                <div className={`ml-2 transition-transform duration-300 -rotate-${isOpened ? "45" : "0"}`}>
+                <div className={`${isOpened ? "font-semibold" : "font-normal"}`}>{question}</div>
+                <div className={`ml-2 transition-transform duration-300 ${isOpened ? "rotate-45" : "rotate-0"}`}>
                     <PlusIcon />
                 </div>
             </div>
