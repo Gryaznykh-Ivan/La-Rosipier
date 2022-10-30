@@ -8,17 +8,17 @@ export default function Footer() {
                 <div className="max-w-[200px] md:max-w-none">
                     <div className="uppercase font-bold text-xxs mb-5">ПОМОЩЬ</div>
                     <div className="text-base">
-                        <NavLink to="/ways-of-payment" className={({ isActive }) => `block leading-6`}>Способ оплаты</NavLink>
-                        <NavLink to="/delivery" className={({ isActive }) => `block leading-6`}>Доставка и самовывоз</NavLink>
-                        <NavLink to="/faq" className={({ isActive }) => `block leading-6`}>Частные вопросы</NavLink>
+                        <NavLink to="/ways-of-payment" className={({ isActive }) => `block leading-6 text-${ isActive ? "black" : "gray-600" }`}>Способ оплаты</NavLink>
+                        <NavLink to="/delivery" className={({ isActive }) => `block leading-6 text-${ isActive ? "black" : "gray-600" }`}>Доставка и самовывоз</NavLink>
+                        <NavLink to="/faq" className={({ isActive }) => `block leading-6 text-${ isActive ? "black" : "gray-600" }`}>Частные вопросы</NavLink>
                     </div>
                 </div>
                 <div className="max-w-[200px] md:max-w-none">
                     <div className="uppercase font-bold text-xxs mb-5">ПОЛИТИКИ И УСЛОВИЯ</div>
                     <div className="text-base">
-                        <NavLink to="/refund-policy" className={({ isActive }) => `block leading-6`}>Обмен и возврат</NavLink>
-                        <NavLink to="/privacy-policy" className={({ isActive }) => `block leading-6`}>Политика конфиденциальности</NavLink>
-                        <NavLink to="/terms-of-service" className={({ isActive }) => `block leading-6`}>Условия предоставления услуг</NavLink>
+                        <NavLink to="/refund-policy" className={({ isActive }) => `block leading-6 text-${ isActive ? "black" : "gray-600" }`}>Обмен и возврат</NavLink>
+                        <NavLink to="/privacy-policy" className={({ isActive }) => `block leading-6 text-${ isActive ? "black" : "gray-600" }`}>Политика конфиденциальности</NavLink>
+                        <NavLink to="/terms-of-service" className={({ isActive }) => `block leading-6 text-${ isActive ? "black" : "gray-600" }`}>Условия предоставления услуг</NavLink>
                     </div>
                 </div>
                 <div className="max-w-[200px] md:max-w-none">
