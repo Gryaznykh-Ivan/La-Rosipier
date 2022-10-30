@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 export default function Footer() {
     return (
@@ -8,17 +8,17 @@ export default function Footer() {
                 <div className="max-w-[200px] md:max-w-none">
                     <div className="uppercase font-bold text-xxs mb-5">ПОМОЩЬ</div>
                     <div className="text-base">
-                        <Link to="#" className="block leading-6">Способ оплаты</Link>
-                        <Link to="#" className="block leading-6">Доставка и самовывоз</Link>
-                        <Link to="#" className="block leading-6">Частные вопросы</Link>
+                        <NavLink to="/ways-of-payment" className={({ isActive }) => `block leading-6`}>Способ оплаты</NavLink>
+                        <NavLink to="/delivery" className={({ isActive }) => `block leading-6`}>Доставка и самовывоз</NavLink>
+                        <NavLink to="/faq" className={({ isActive }) => `block leading-6`}>Частные вопросы</NavLink>
                     </div>
                 </div>
                 <div className="max-w-[200px] md:max-w-none">
                     <div className="uppercase font-bold text-xxs mb-5">ПОЛИТИКИ И УСЛОВИЯ</div>
                     <div className="text-base">
-                        <Link to="#" className="block leading-6">Обмен и возврат</Link>
-                        <Link to="#" className="block leading-6">Политика конфиденциальности</Link>
-                        <Link to="#" className="block leading-6">Условия предоставления услуг</Link>
+                        <NavLink to="/refund-policy" className={({ isActive }) => `block leading-6`}>Обмен и возврат</NavLink>
+                        <NavLink to="/privacy-policy" className={({ isActive }) => `block leading-6`}>Политика конфиденциальности</NavLink>
+                        <NavLink to="/terms-of-service" className={({ isActive }) => `block leading-6`}>Условия предоставления услуг</NavLink>
                     </div>
                 </div>
                 <div className="max-w-[200px] md:max-w-none">
