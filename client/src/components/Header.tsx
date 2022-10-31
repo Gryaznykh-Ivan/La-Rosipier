@@ -31,12 +31,12 @@ export default function Header() {
 
     return (
         <div className="relative">
-            <div className="fixed w-full max-h-[112px] z-30">
+            <div className="fixed w-full max-h-[112px] z-20">
                 <div className="h-16 border-b-[1px] bg-white">
                     <div className="container grid grid-cols-3 px-3 items-center h-full">
                         <div className="flex">
                             <button className="p-2 transform hover:scale-110 md:hidden" onClick={onBurgerToggle}>
-                                {isBurgerOpened ? <CrossIcon /> : <BurgerIcon />}
+                                <BurgerIcon />
                             </button>
                             <button className="p-2 transform hover:scale-110 hidden md:block">
                                 <SearchIcon />
@@ -57,9 +57,9 @@ export default function Header() {
                 </div>
                 <NavMenu />
             </div>
-            <div className={`fixed w-full h-screen ${isBurgerOpened ? "bg-black" : "h-0"} bg-opacity-30 transform transition-colors duration-300 md:hidden z-10`} onClick={onBurgerClose}>
+            <div className={`fixed w-full h-screen ${isBurgerOpened ? "bg-black" : "h-0"} bg-opacity-30 transform transition-colors duration-300 md:hidden z-30`} onClick={onBurgerClose}>
                 <div className={`${isBurgerOpened ? "w-5/6" : "w-0"} max-w-sm bg-white h-screen transform transition-all duration-300 overflow-hidden`} onClick={e => e.stopPropagation()}>
-                    <div className="h-[calc(100vh-85px)] overflow-y-auto" hidden={!isBurgerOpened}>
+                    <div className="h-screen overflow-y-auto" hidden={!isBurgerOpened}>
                         <BurgerNavMenu
                             onBurgerClose={ onBurgerClose }
                         />
