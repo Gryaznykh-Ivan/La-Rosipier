@@ -39,13 +39,13 @@ export default function BurgerNavMenu({ onBurgerClose }: IProps) {
     }
 
     return (
-        <div className="transform transition-all duration-500">
-            <div className="flex items-center p-2">
+        <div className="h-screen transform transition-all duration-500 pt-12 pb-20"> 
+            <div className="fixed inset-0 flex bg-white items-center px-2 shadow-lg shadow-white h-12">
                 <button className="p-2 transform hover:scale-110" onClick={onBurgerClose}>
                     <CrossIcon />
                 </button>
             </div>
-            <div className="divide-y-[1px] divide-gray-200">
+            <div className="divide-y-[1px] divide-gray-200 h-full overflow-y-auto">
                 {menu.history.length > 0 &&
                     <div className="flex items-center text-sm font-semibold pl-3 py-2 h-10 cursor-pointer whitespace-nowrap" onClick={onBackMenu}>
                         <ArrowLeft w={16} h={16} />

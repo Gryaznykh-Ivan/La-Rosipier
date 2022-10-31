@@ -59,11 +59,9 @@ export default function Header() {
             </div>
             <div className={`fixed w-full h-screen ${isBurgerOpened ? "bg-black" : "h-0"} bg-opacity-30 transform transition-colors duration-300 md:hidden z-30`} onClick={onBurgerClose}>
                 <div className={`${isBurgerOpened ? "w-5/6" : "w-0"} max-w-sm bg-white h-screen transform transition-all duration-300 overflow-hidden`} onClick={e => e.stopPropagation()}>
-                    <div className="h-screen overflow-y-auto" hidden={!isBurgerOpened}>
-                        <BurgerNavMenu
-                            onBurgerClose={ onBurgerClose }
-                        />
-                    </div>
+                    <BurgerNavMenu
+                        onBurgerClose={onBurgerClose}
+                    />
                 </div>
             </div>
         </div>
