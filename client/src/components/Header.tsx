@@ -31,7 +31,7 @@ export default function Header() {
 
     return (
         <div className="relative">
-            <div className="fixed w-full max-h-[112px] z-20">
+            <div className="fixed w-full z-20">
                 <div className="h-16 border-b-[1px] bg-white">
                     <div className="container grid grid-cols-3 px-3 items-center h-full">
                         <div className="flex">

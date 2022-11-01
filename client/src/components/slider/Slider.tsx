@@ -1,28 +1,40 @@
 import React from 'react'
+import { Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { SwiperOptions } from 'swiper/types';
+
+import 'swiper/css';
+import ArrowLeftIcon from '../icons/ArrowLeft';
+import ArrowRightIcon from '../icons/ArrowRight';
+
 
 interface IProps {
+    className: string;
     children: React.ReactNode;
+    breakpoints: {
+        [width: number]: SwiperOptions;
+    };
 }
 
-// scroll padding left
-
-export default function Slider({ children }: IProps) {
-
+export default function Slider({ className, breakpoints, children }: IProps) {
     const getChildrenArray = (children: React.ReactNode) => {
         return React.Children.toArray(children);
     }
 
     return (
-        <div className="">
-            <div className="relative overflow-hidden">
-                <div className="flex space-x-4 overflow-x-scroll -mb-[17px] pb-[17px]">
-                    { getChildrenArray(children).map(slide => slide) }
-                </div>
-            </div>
-            <div className="">
-                <button>Назад</button>
-                <button>Вперед</button>
-            </div>
-        </div>
+        <Swiper
+            className={`${className} relative group/swiper`}
+            modules={[Navigation]}
+            slidesPerView={2}
+            breakpoints={breakpoints}
+            navigation={{
+                prevEl: '.prev',
+                nextEl: '.next',
+            }}
+        >
+            {getChildrenArray(children).map((slide, index) => <SwiperSlide key={index}>{slide}</SwiperSlide>)}
+            <button className="prev hidden md:flex items-center justify-center absolute top-1/3 left-10 z-10 w-16 h-16 bg-gray-200 rounded-full disabled:w-0 disabled:opacity-0 opacity-0 group-hover/swiper:opacity-100 transition-all duration-300"><ArrowLeftIcon /></button>
+            <button className="next hidden md:flex items-center justify-center absolute top-1/3 right-10 z-10 w-16 h-16 bg-gray-200 rounded-full disabled:w-0 disabled:opacity-0 opacity-0 group-hover/swiper:opacity-100 transition-all duration-300"><ArrowRightIcon /></button>
+        </Swiper >
     )
 }
