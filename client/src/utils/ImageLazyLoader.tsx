@@ -7,9 +7,10 @@ interface IProps {
     className?: string;
     src: string;
     alt: string;
+    showLoading?: boolean;
 }
 
-export default function ImageLazyLoader({ className = "", src, alt }: IProps) {
+export default function ImageLazyLoader({ className = "", src, alt, showLoading=true }: IProps) {
     const [isVisible, setIsVisible] = useState(false);
     const imgRef = useRef(null);
 
@@ -28,7 +29,7 @@ export default function ImageLazyLoader({ className = "", src, alt }: IProps) {
             <div className=""></div>
             {isVisible &&
                 <>
-                    <div className={imageLoading ? "absolute inset-0 flex items-center justify-center" : "hidden"}>
+                    <div className={ (imageLoading && showLoading) ? "absolute inset-0 flex items-center justify-center" : "hidden"}>
                         <LoadingIcon />
                     </div>
                     <img src={src} loading="lazy" alt={alt} onLoad={onImageLoaded} />
