@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { INavMenuState, NavMenuType } from '../../types'
-import { NavMenuData } from './NavMenuData'
+import { NavData } from './NavData'
 
-export default function NavMenu() {
+export default function NavBar() {
     const [menu, setMenu] = useState<INavMenuState>({
         activeIndex: -1,
         current: []
@@ -17,7 +17,7 @@ export default function NavMenu() {
         <div className="hidden md:block bg-white" onMouseLeave={() => onShowSubMenu([], -1)}>
             <div className="border-b-[1px]">
                 <div className="container flex items-center px-3">
-                    {NavMenuData.map((item, i) => (
+                    {NavData.map((item, i) => (
                         < Link key={item.title} to={item.link} className="relative group box-border text-xs mr-4 py-3 font-bold tracking-wide whitespace-nowrap" onMouseEnter={() => onShowSubMenu(item.menu, i)}>
                             {item.title}
                             <span className={`absolute bottom-0 left-1/2 w-0 h-[2px] bg-black group-hover:w-1/2 transition-all ${menu.activeIndex === i && "w-1/2"}`}></span>

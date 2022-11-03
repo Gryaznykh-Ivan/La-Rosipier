@@ -3,17 +3,16 @@ import { Link } from 'react-router-dom'
 
 import useSetBodyScroll from '../hooks/useSetBodyScroll'
 
-import CrossIcon from './icons/Cross'
 import BurgerIcon from './icons/Burger'
 import SearchIcon from './icons/Search'
 import BagIcon from './icons/Bag'
 
-import BurgerNavMenu from './navigations/BurgerNavMenu'
-import NavMenu from './navigations/NavMenu'
+import NavBar from './navigations/NavBar'
+import Burger from './navigations/Burger'
 
 export default function Header() {
     const [isBurgerOpened, setIsBurgerOpened] = useState<boolean>(false);
-    const setBodyScroll = useSetBodyScroll();
+    const setBodyScroll = useSetBodyScroll(true);
 
     useEffect(() => {
         setBodyScroll(!isBurgerOpened);
@@ -55,15 +54,12 @@ export default function Header() {
                         </div>
                     </div>
                 </div>
-                <NavMenu />
+                <NavBar />
             </div>
-            <div className={`fixed w-full h-screen ${isBurgerOpened ? "bg-black" : "h-0"} bg-opacity-30 transform transition-colors duration-300 md:hidden z-30`} onClick={onBurgerClose}>
-                <div className={`${isBurgerOpened ? "w-5/6" : "w-0"} max-w-sm bg-white h-screen transform transition-all duration-300 overflow-hidden`} onClick={e => e.stopPropagation()}>
-                    <BurgerNavMenu
-                        onBurgerClose={onBurgerClose}
-                    />
-                </div>
-            </div>
+            <Burger
+                isActive={ isBurgerOpened }
+                onClose={ onBurgerClose }
+            />
         </div>
     )
 }

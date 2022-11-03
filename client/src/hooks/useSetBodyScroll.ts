@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function useSetBodyScroll() {
+export default function useSetBodyScroll(resize = false) {
     const [bodyScroll, setBodyScroll] = useState(true);
 
     useEffect(() => {
@@ -11,15 +11,19 @@ export default function useSetBodyScroll() {
 
         if (!bodyScroll) {
             document.body.style.overflow = "hidden";
-            window.addEventListener("resize", resetOnResize);
+            if (resize === true) {
+                window.addEventListener("resize", resetOnResize);
+            }
         } else {
             document.body.style.overflow = "auto";
         }
 
         return () => {
-            window.removeEventListener("resize", resetOnResize);
+            if (resize === true) {
+                window.removeEventListener("resize", resetOnResize);
+            }
         };
-    }, [bodyScroll]);
+    }, [bodyScroll, resize]);
 
     return setBodyScroll;
 }

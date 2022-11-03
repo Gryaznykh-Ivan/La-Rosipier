@@ -21,3 +21,8 @@ export interface INavMenuState {
     current: NavMenuType;
     activeIndex: number;
 }
+
+export interface IProductGridCols {
+    mobile: number;
+    laptop: number;
+}

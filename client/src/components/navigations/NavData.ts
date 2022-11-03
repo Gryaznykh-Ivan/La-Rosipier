@@ -1,6 +1,6 @@
 import { NavMenuType } from "../../types";
 
-export const BurgerNavMenuData: NavMenuType = [
+export const BurgerNavData: NavMenuType = [
     {
         type: "LINK",
         title: "NIKE",
@@ -330,7 +330,7 @@ export const BurgerNavMenuData: NavMenuType = [
 ]
 
 
-export const NavMenuData: NavMenuType = [
+export const NavData: NavMenuType = [
     {
         type: "LINK",
         title: "NIKE",
