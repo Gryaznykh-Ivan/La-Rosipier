@@ -1,18 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
-import ShineHoverButton from '../buttons/ShineHoverButton';
 import ProductCard from '../products/ProductCard'
 import Slider from '../slider/Slider'
 
-interface IProps {
-    title: string;
-    collectionId: string;
-}
-
-export default function CollectionPreview({ title, collectionId }: IProps) {
+export default function Recommendation() {
     return (
         <div className="my-12">
-            <h2 className="my-6 text-2xl font-semibold text-center">{title}</h2>
+            <h2 className="my-6 text-2xl font-semibold text-center">Вам также может понравиться</h2>
             <Slider
                 className="my-10"
                 breakpoints={({
@@ -31,11 +24,6 @@ export default function CollectionPreview({ title, collectionId }: IProps) {
                 <ProductCard isSale={true} />
                 <ProductCard isSale={true} />
             </Slider>
-            <div className="flex justify-center">
-                <Link to="#">
-                    <ShineHoverButton className="text-white bg-black">Посмотреть все</ShineHoverButton>
-                </Link>
-            </div>
         </div>
     )
 }

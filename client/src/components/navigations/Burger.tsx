@@ -44,13 +44,13 @@ export default function Burger({ isActive, onClose }: IProps) {
         <Modal>
             <div className={`fixed inset-0 bg-black ${isActive ? "bg-opacity-30 visible" : "bg-opacity-0 invisible"} transition-all duration-300 md:hidden z-30`} onClick={onClose}>
                 <div className={`${isActive ? "w-5/6" : "w-0"} max-w-sm bg-white h-screen transform transition-all duration-300 overflow-hidden`} onClick={e => e.stopPropagation()}>
-                    <div className="h-screen transform transition-all duration-500 pt-12 pb-20">
+                    <div className="flex flex-col h-screen transform transition-all duration-500 pt-12">
                         <div className="fixed inset-0 flex bg-white items-center px-2 shadow-lg shadow-white h-12">
                             <button className="p-2 transform hover:scale-110" onClick={onClose}>
                                 <CrossIcon />
                             </button>
                         </div>
-                        <div className="divide-y-[1px] divide-gray-200 h-full overflow-y-auto">
+                        <div className="flex-1 divide-y-[1px] divide-gray-200 h-full overflow-y-auto pb-20">
                             {menu.history.length > 0 &&
                                 <div className="flex items-center text-sm font-semibold pl-3 py-2 h-10 cursor-pointer whitespace-nowrap" onClick={onBackMenu}>
                                     <ArrowLeft w={16} h={16} />

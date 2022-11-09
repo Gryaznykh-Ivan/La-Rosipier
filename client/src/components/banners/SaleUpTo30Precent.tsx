@@ -10,7 +10,7 @@ export default function SaleUpTo30Precent() {
                 <div className="text-2xl font-bold drop-shadow-xl">SALE UP TO 30%</div>
                 <div className="text-xs font-semibold drop-shadow-md mt-2">СЕЗОН ОСЕННИХ СКИДОК НА LA ROSIPIER</div>
                 <Link to="#" className="mt-4">
-                    <ShineHoverButton>К коллекции</ShineHoverButton>
+                    <ShineHoverButton className="text-white bg-black">К коллекции</ShineHoverButton>
                 </Link>
             </div>
         </div>

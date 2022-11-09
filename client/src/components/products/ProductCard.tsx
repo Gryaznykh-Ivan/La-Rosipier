@@ -7,10 +7,17 @@ interface IProps {
 
 export default function ProductCard({ isSale }: IProps) {
     return (
-        <Link to="#" className="block group p-2">
-            <div className="relative transition-transform duration-300 group-hover:scale-[102%] w-full aspect-5/3">
-                <ImageLazyLoader src={`${process.env.PUBLIC_URL}/assets/images/air-force0.jpg`} alt={""} />
-                <ImageLazyLoader showLoading={ false } className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden group-hover:md:block" src={`${process.env.PUBLIC_URL}/assets/images/air-force1.jpg`} alt={""} />
+        <Link to="/products/example" className="block group p-2">
+            <div className="relative">
+                <div className="transition-transform duration-300 group-hover:scale-[102%] w-full aspect-5/3">
+                    <ImageLazyLoader src={`${process.env.PUBLIC_URL}/assets/images/air-force0.jpg`} alt={""} />
+                    <ImageLazyLoader showLoading={false} className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden group-hover:md:block" src={`${process.env.PUBLIC_URL}/assets/images/air-force1.jpg`} alt={""} />
+                </div>
+                {isSale &&
+                    <div className="absolute bottom-0 left-0">
+                        <div className="font-bold text-white bg-red-600 md:px-3 md:py-2 py-1 px-2 z-20 rounded-sm md:text-md text-sm">SALE</div>
+                    </div>
+                }
             </div>
             <div className="flex flex-col items-center mt-2">
                 <div className="mb-2 space-y-1">

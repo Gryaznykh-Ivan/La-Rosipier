@@ -52,19 +52,19 @@ export default function CollateBar({ productGridCols, onProductGridColsChange }:
                     </button>
                 </div>
                 <div className="border-l-[1px] md:border-r-[1px] px-2 hidden md:flex">
-                    <button className="group/3x3 flex justify-center items-center h-full w-12 noselect" onClick={ () => onProductGridColsChange("laptop", 4) }>
-                        <Wall4x4Icon className={`${ productGridCols.laptop !== 4 ? "stroke-gray-500" : "stroke-black" } group-hover/3x3:stroke-black`} />
+                    <button className="group/4x4 flex justify-center items-center h-full w-12 noselect" onClick={ () => onProductGridColsChange("laptop", 4) }>
+                        <Wall4x4Icon className={`${ productGridCols.laptop !== 4 ? "stroke-gray-500" : "stroke-black" } group-hover/4x4:stroke-black`} />
                     </button>
-                    <button className="flex justify-center items-center h-full w-12" onClick={ () => onProductGridColsChange("laptop", 3) }>
+                    <button className="group/3x3 flex justify-center items-center h-full w-12" onClick={ () => onProductGridColsChange("laptop", 3) }>
                         <Wall3x3Icon className={`${ productGridCols.laptop !== 3 ? "stroke-gray-500" : "stroke-black" } group-hover/3x3:stroke-black`} />
                     </button>
                 </div>
                 <div className="flex border-l-[1px] md:border-r-[1px] px-2 md:hidden">
-                    <button className="group/3x3 flex justify-center items-center h-full w-12 noselect" onClick={ () => onProductGridColsChange("mobile", 2) }>
-                        <Wall2x2Icon className={`${ productGridCols.mobile !== 2 ? "stroke-gray-500" : "stroke-black" } group-hover/3x3:stroke-black`} />
+                    <button className="group/2x2 flex justify-center items-center h-full w-12 noselect" onClick={ () => onProductGridColsChange("mobile", 2) }>
+                        <Wall2x2Icon className={`${ productGridCols.mobile !== 2 ? "stroke-gray-500" : "stroke-black" } group-hover/2x2:stroke-black`} />
                     </button>
-                    <button className="flex justify-center items-center h-full w-12" onClick={ () => onProductGridColsChange("mobile", 1) }>
-                        <Wall1x1Icon className={`${ productGridCols.mobile !== 1 ? "stroke-gray-500" : "stroke-black" } group-hover/3x3:stroke-black`} />
+                    <button className="group/1x1 flex justify-center items-center h-full w-12" onClick={ () => onProductGridColsChange("mobile", 1) }>
+                        <Wall1x1Icon className={`${ productGridCols.mobile !== 1 ? "stroke-gray-500" : "stroke-black" } group-hover/1x1:stroke-black`} />
                     </button>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+
 module.exports = {
     content: [
         "./src/**/*.{js,jsx,ts,tsx}",
@@ -23,7 +23,7 @@ module.exports = {
         container: {
             center: true,
             screens: {
-                "2xl": "1500px",
+                "2xl": "1500px"
             },
         },
         extend: {
@@ -37,8 +37,10 @@ module.exports = {
             },
             aspectRatio: {
                 '5/3': '5 / 3',
-              },
+            },
         },
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/forms')
+    ],
 }

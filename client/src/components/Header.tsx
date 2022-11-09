@@ -3,25 +3,40 @@ import { Link } from 'react-router-dom'
 
 import useSetBodyScroll from '../hooks/useSetBodyScroll'
 
-import BurgerIcon from './icons/Burger'
 import SearchIcon from './icons/Search'
+import BurgerIcon from './icons/Burger'
 import BagIcon from './icons/Bag'
 
 import NavBar from './navigations/NavBar'
 import Burger from './navigations/Burger'
+import SearchBar from './navigations/SearchBar'
 
 export default function Header() {
+    const [isSearchOpened, setIsSearchOpened] = useState<boolean>(false);
     const [isBurgerOpened, setIsBurgerOpened] = useState<boolean>(false);
-    const setBodyScroll = useSetBodyScroll(true);
+
+    const setBodyScrollResize = useSetBodyScroll(true);
+    const setBodyScroll = useSetBodyScroll(false);
 
     useEffect(() => {
-        setBodyScroll(!isBurgerOpened);
+        setBodyScrollResize(!isBurgerOpened);
     }, [isBurgerOpened]);
 
+    useEffect(() => {
+        setBodyScroll(!isSearchOpened);
+    }, [isSearchOpened]);
+
+
+    const onSearchClose = () => {
+        setIsSearchOpened(false);
+    }
+
     const onBurgerClose = () => {
-        if (isBurgerOpened === true) {
-            setIsBurgerOpened(false);
-        }
+        setIsBurgerOpened(false);
+    }
+
+    const onSearchToggle = () => {
+        setIsSearchOpened(prev => !prev)
     }
 
     const onBurgerToggle = () => {
@@ -37,28 +52,32 @@ export default function Header() {
                             <button className="p-2 transform hover:scale-110 md:hidden" onClick={onBurgerToggle}>
                                 <BurgerIcon />
                             </button>
-                            <button className="p-2 transform hover:scale-110 hidden md:block">
+                            <button className="p-2 transform hover:scale-110 hidden md:block" onClick={onSearchToggle}>
                                 <SearchIcon />
                             </button>
                         </div>
-                        <Link to="/" className="text-center text-xl font-bold">
-                            La Rosipier
+                        <Link to="/" className="text-center text-xl font-bold whitespace-nowrap">
+                            SUPER BRAND
                         </Link>
                         <div className="flex justify-self-end">
-                            <button className="p-2 transform hover:scale-110 md:hidden">
+                            <button className="p-2 transform hover:scale-110 block md:hidden" onClick={onSearchToggle}>
                                 <SearchIcon />
                             </button>
-                            <button className="p-2 transform hover:scale-110">
+                            <Link to="/cart" className="p-2 transform hover:scale-110">
                                 <BagIcon />
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
                 <NavBar />
             </div>
             <Burger
-                isActive={ isBurgerOpened }
-                onClose={ onBurgerClose }
+                isActive={isBurgerOpened}
+                onClose={onBurgerClose}
+            />
+            <SearchBar
+                isActive={isSearchOpened}
+                onClose={onSearchClose}
             />
         </div>
     )

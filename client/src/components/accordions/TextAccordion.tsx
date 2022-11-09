@@ -6,7 +6,7 @@ interface IProps {
     answer: string;
 }
 
-export default function QuestionAccordion({ question, answer }: IProps) {
+export default function TextAccordion({ question, answer }: IProps) {
     const [isOpened, setIsOpened] = useState(false)
     const ref = useRef<HTMLParagraphElement>(null)
 
@@ -17,7 +17,7 @@ export default function QuestionAccordion({ question, answer }: IProps) {
     return (
         <div className="w-full">
             <div className={`flex justify-between items-center py-3 cursor-pointer hover:bg-gray-100 rounded-lg px-4 ${isOpened && "bg-gray-100"}`} onClick={onToggle}>
-                <div className={`${isOpened ? "font-semibold" : "font-normal"}`}>{question}</div>
+                <h2 className={`${isOpened ? "font-semibold" : "font-normal"}`}>{question}</h2>
                 <div className={`ml-2 transition-transform duration-300 ${isOpened ? "rotate-45" : "rotate-0"}`}>
                     <PlusIcon />
                 </div>

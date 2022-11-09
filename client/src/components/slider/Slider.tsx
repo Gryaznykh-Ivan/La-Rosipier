@@ -11,12 +11,13 @@ import ArrowRightIcon from '../icons/ArrowRight';
 interface IProps {
     className: string;
     children: React.ReactNode;
-    breakpoints: {
+    slidesPerView?: number;
+    breakpoints?: {
         [width: number]: SwiperOptions;
     };
 }
 
-export default function Slider({ className, breakpoints, children }: IProps) {
+export default function Slider({ className, breakpoints, slidesPerView=2, children }: IProps) {
     const getChildrenArray = (children: React.ReactNode) => {
         return React.Children.toArray(children);
     }
@@ -25,7 +26,7 @@ export default function Slider({ className, breakpoints, children }: IProps) {
         <Swiper
             className={`${className} relative group/swiper`}
             modules={[Navigation]}
-            slidesPerView={2}
+            slidesPerView={slidesPerView}
             breakpoints={breakpoints}
             navigation={{
                 prevEl: '.prev',

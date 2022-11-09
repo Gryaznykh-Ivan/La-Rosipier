@@ -26,7 +26,6 @@ export default function ImageLazyLoader({ className = "", src, alt, showLoading=
 
     return (
         <div className={`flex items-center justify-center ${className}`} ref={imgRef}>
-            <div className=""></div>
             {isVisible &&
                 <>
                     <div className={ (imageLoading && showLoading) ? "absolute inset-0 flex items-center justify-center" : "hidden"}>

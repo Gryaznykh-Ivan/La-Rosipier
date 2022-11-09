@@ -38,7 +38,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="text-xxs text-center mt-8">© 2022, La Rosipier</div>
+            <div className="text-xxs text-center mt-8">© 2022, Super Brand</div>
         </div>
     )
 }

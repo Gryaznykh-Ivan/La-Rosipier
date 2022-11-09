@@ -26,3 +26,12 @@ export interface IProductGridCols {
     mobile: number;
     laptop: number;
 }
+
+export interface IPaginationPage {
+    id: number;
+    title: string;
+    isActive: boolean;
+    search: string;
+    skip: number;
+    limit: number;
+}

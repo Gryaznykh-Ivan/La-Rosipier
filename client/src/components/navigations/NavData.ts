@@ -321,12 +321,6 @@ export const BurgerNavData: NavMenuType = [
         link: "/collections/sale",
         menu: []
     },
-    {
-        type: "LINK",
-        title: "HELLOWEEN 2022",
-        link: "/collections/helloween-2022",
-        menu: []
-    },
 ]
 
 
@@ -603,10 +597,5 @@ export const NavData: NavMenuType = [
         link: "/collections/sale",
         menu: []
     },
-    {
-        type: "LINK",
-        title: "HELLOWEEN 2022",
-        link: "/collections/helloween-2022",
-        menu: []
-    },
+
 ]
