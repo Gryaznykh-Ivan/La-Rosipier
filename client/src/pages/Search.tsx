@@ -78,10 +78,6 @@ export default function Search() {
                 totalProductCount={1490}
                 onPageChange={onPageChange}
             />
-            <CollateBar
-                productGridCols={productGridCols}
-                onProductGridColsChange={onProductGridColsChange}
-            />
         </div>
     )
 }

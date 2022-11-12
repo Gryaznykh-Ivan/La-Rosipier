@@ -37,7 +37,7 @@ export default function Checkout() {
                                         <input type="text" inputMode="numeric" name="code" id="code" className="border-0 border-b-2 focus:border-black py-2 focus:ring-0 px-0 cursor-not-allowed" placeholder="Введите код из СМС" disabled />
                                     </div>
                                     <div className="text-xs">Если у вас еще нет аккаунта на нашем сайте - он будет автоматически создан</div>
-                                    <ShineHoverButton>Войти в аккаунт</ShineHoverButton>
+                                    <ShineHoverButton className="bg-black text-white">Войти в аккаунт</ShineHoverButton>
                                 </form>
                             </div>
                         </div>
@@ -80,7 +80,7 @@ export default function Checkout() {
                                         <input type="text" name="tel" id="tel" className="border-0 border-b-2 focus:border-black py-2 focus:ring-0 px-0" placeholder="Введите телефон" />
                                     </div>
                                 </div>
-                                <ShineHoverButton>Перейти к вариантам доставки</ShineHoverButton>
+                                <ShineHoverButton className="bg-black text-white">Перейти к вариантам доставки</ShineHoverButton>
                             </form>
                         </div>
                     </div>

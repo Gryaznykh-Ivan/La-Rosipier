@@ -26,6 +26,7 @@ export default function Slider({ className, breakpoints, slidesPerView=2, childr
         <Swiper
             className={`${className} relative group/swiper`}
             modules={[Navigation]}
+            centerInsufficientSlides={true}
             slidesPerView={slidesPerView}
             breakpoints={breakpoints}
             navigation={{

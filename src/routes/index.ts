@@ -1,8 +1,18 @@
 import Router from 'koa-router'
-import api from './api'
+
+import authRouter from './auth'
+import publicRouter from './public'
+import privateRouter from './private'
+
+import JwtParser from '../middlewares/jwtParser'
+import JwtFilter from '../middlewares/jwtFilter'
 
 const router = new Router();
 
-router.use(api);
+router.use(authRouter);
+router.use(JwtParser); // Парсим токен
+router.use(publicRouter);
+router.use(JwtFilter); // Фильтрует запросы без токена
+router.use(privateRouter);
 
 export default router;
